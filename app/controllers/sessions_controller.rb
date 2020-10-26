@@ -6,15 +6,15 @@ class SessionsController < ApplicationController
   
   
     def create
-      if params[:name].present?
-        session[:name] = params[:name]
-        redirect_to :root
+      @user = User.find_by(email: params[:email])  
+      if @user && @user.authenticate(params[:password])
+       redirect_to @user
       else
         redirect_to :login
       end
     end
 
-    
+
     def destroy
         if session[:name].present?
         session.delete :name
