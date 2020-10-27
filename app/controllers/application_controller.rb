@@ -6,7 +6,10 @@ class ApplicationController < ActionController::Base
         end
     end
  
-    def logged_in?
-        !!session[:user_id]
+    def require_login
+        unless current_user
+          redirect_to root_url
+        end
     end
+
 end
