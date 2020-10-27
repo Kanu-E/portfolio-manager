@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :portfolios
   root "welcome#index"
 
   resources :users, only: [:create, :show]
