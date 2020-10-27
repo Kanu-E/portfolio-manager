@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
     def create
       @user = User.find_by(email: params[:email])  
       if @user && @user.authenticate(params[:password])
-       redirect_to @user
+        session[user_id] = @user.id
+        redirect_to @user
       else
         redirect_to :login
       end
@@ -16,11 +17,11 @@ class SessionsController < ApplicationController
 
 
     def destroy
-        if session[:name].present?
+        if session[:id].present?
         session.delete :name
         else
           redirect_to :login
         end
         
-      end
+    end
 end
