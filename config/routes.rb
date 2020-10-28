@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :portfolios
   root "welcome#index"
 
+  get '/auth/facebook/callback' => 'sessions#omniauth'
+
   resources :users, only: [:create, :show]
 
   get 'signup' => 'users#new'

@@ -57,3 +57,5 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 
 gem 'dotenv-rails'
+
+gem 'thin'
