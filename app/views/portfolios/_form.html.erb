@@ -1,37 +1,39 @@
-<%= form_with(model: portfolio, local: true) do |form| %>
+<%= form_for @portfolio do |f| %>
   <% if portfolio.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
+      <h2><%= pluralize(@portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
 
       <ul>
-        <% portfolio.errors.full_messages.each do |message| %>
+        <% @portfolio.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
+   <%= f.hidden_field :user_id %>
+
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+    <%= f.label :code %>
+    <%= f.text_field :code %>
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
+    <%= f.label :type %>
+    <%= f.text_field :type %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
