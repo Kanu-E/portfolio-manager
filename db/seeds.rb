@@ -8,6 +8,22 @@
 
 require 'faker'
 
-15.times do  
+4.times do  
     User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "Hello" )
+end
+
+4.times do
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 1)
+end
+
+4.times do
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 2)
+end
+
+4.times do
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 3)
+end
+
+6.times do
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 4)
 end

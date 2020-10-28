@@ -3,7 +3,6 @@ class PortfoliosController < ApplicationController
   before_action :require_login, except: [:index]
 
   def index
-
     if params[:user_id]
       @portfolios = User.find(params[:user_id]).portfolios
     else
@@ -40,7 +39,7 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    raise params.inspect
+ 
     respond_to do |format|
       if @portfolio.update(portfolio_params)
         format.html { redirect_to @portfolio, notice: 'Portfolio was successfully updated.' }
