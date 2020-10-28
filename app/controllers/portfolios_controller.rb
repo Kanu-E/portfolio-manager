@@ -1,8 +1,14 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:index]
 
   def index
-    @portfolios = Portfolio.all
+
+    if params[:user_id]
+      @portfolios = User.find(params[:user_id]).portfolios
+    else
+      @portfolios = Portfolio.all
+    end
   end
 
 
@@ -60,8 +66,7 @@ class PortfoliosController < ApplicationController
       @portfolio = Portfolio.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def portfolio_params
-      params.require(:portfolio).permit(:first_name, :last_name, :code, :type)
+      params.require(:portfolio).permit(:first_name, :last_name, :code, :user_id)
     end
 end
