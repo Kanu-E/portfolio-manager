@@ -13,17 +13,33 @@ require 'faker'
 end
 
 4.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 1)
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 1)
 end
 
 4.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 2)
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 2)
 end
 
 4.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 3)
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 3)
 end
 
 6.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Name.last_name, user_id: 4)
+    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 4)
 end
+
+Classification.create(title: "put option")
+
+Classification.create(title: "call option")
+
+Classification.create(title: "stock")
+
+Classification.create(title: "Treasury bill")
+
+Classification.create(title: "Treasury bond")
+
+Classification.create(title: "cash")
+
+
+
+
