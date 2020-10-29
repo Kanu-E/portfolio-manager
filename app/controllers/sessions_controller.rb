@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
 
     end
   
-  
     def create
       @user = User.find_by(email: params[:email])  
       if @user && @user.authenticate(params[:password])
@@ -15,7 +14,6 @@ class SessionsController < ApplicationController
       end
     end
 
-
     def destroy
         if session[:id].present?
         session.delete :id
@@ -23,8 +21,7 @@ class SessionsController < ApplicationController
         redirect_to :root_url     
     end
 
-    def omniauth
-     
+    def omniauth 
       @user = User.find_or_create_by(email: auth['info']['email']) do |u|
         u.first_name = auth['info']['name'].split(" ").first
         u.last_name = auth['info']['name'].split(" ").last 
