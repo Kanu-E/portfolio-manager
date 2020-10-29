@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 2020_10_29_033349) do
     t.string "last_name"
     t.string "code"
     t.integer "user_id"
+    t.integer "classification_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["classification_id"], name: "index_portfolios_on_classification_id"
     t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 

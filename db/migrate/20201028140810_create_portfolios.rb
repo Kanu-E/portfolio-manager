@@ -5,8 +5,8 @@ class CreatePortfolios < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.string :code
       t.references :user
-
+      t.references :classification
       t.timestamps
  
-  end
+    end
 end
