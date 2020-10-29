@@ -1,4 +1,4 @@
 class Classification < ApplicationRecord
-    has_many :portfolios
-    has_many :users, through: :portfolios
+    has_many :assets
+    has_many :portfolios, through: :assets
 end
