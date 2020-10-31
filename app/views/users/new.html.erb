@@ -1,7 +1,7 @@
 
 
 <% @user.errors.full_messages.each do |msg|%>
-<h4 <%= msg %> </h4>
+<h4 class="errors"><%= msg %> </h4>
 <% end %>
 
 <%= form_for @user do |f| %>
