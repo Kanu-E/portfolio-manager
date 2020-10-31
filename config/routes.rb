@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#omniauth'
 
-  resources :users, only: [:create, :show]
+  resources :users, only: [:create, :show, :index]
 
   get 'signup' => 'users#new'
 

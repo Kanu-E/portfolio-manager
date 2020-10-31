@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
 
     before_action :require_login, except: [:new, :create]
-  
+    def index
+
+    end
     def new
         @user = User.new
     end
@@ -18,6 +20,7 @@ class UsersController < ApplicationController
 
     def show
         @user = current_user
+        redirect_to :logout
     end
 
 
