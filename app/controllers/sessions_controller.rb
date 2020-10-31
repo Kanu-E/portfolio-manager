@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 
     def new
-        
+        byebug
+        @user = User.find_by(email: params[:email]) 
     end
   
     def create
@@ -10,15 +11,16 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
-        redirect_to :login
+        render :new
       end
     end
 
     def destroy
-        if session[:id].present?
-        session.delete :id
+      
+        if session[:user_id].present?
+        session.delete :user_id
          end
-        redirect_to :root_url     
+        redirect_to :root    
     end
 
     def omniauth 

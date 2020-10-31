@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
     def show
         @user = current_user
-        redirect_to :logout
     end
 
 
