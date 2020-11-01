@@ -28,17 +28,19 @@ end
     Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 4)
 end
 
-Classification.create(title: "put option")
+20.times do
+    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 3, r_digits: 2))
+end
 
-Classification.create(title: "call option")
+23.times do
+    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 4, r_digits: 2))
+end
 
-Classification.create(title: "stock")
+24.times do
+    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 2, r_digits: 2))
+end
 
-Classification.create(title: "Treasury bill")
 
-Classification.create(title: "Treasury bond")
-
-Classification.create(title: "cash")
 
 
 

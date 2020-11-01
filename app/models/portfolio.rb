@@ -1,8 +1,7 @@
 class Portfolio < ApplicationRecord
-    
+    has_many :portfolio_assets
+    has_many :assets, through: :portfolio_assets
     belongs_to :user
-    has_many :assets
-    has_many :classifications, through: :assets
 
     def to_s
         "#{self.first_name} #{last_name}"
