@@ -8,6 +8,7 @@ class PortfoliosController < ApplicationController
 
 
   def show
+    @finances = @portfolio.finances
   end
 
   def new

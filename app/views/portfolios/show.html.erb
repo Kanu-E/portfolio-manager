@@ -15,5 +15,33 @@
   $<%= @portfolio.total_value %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Financial Asset Name</th> 
+      
+      <th>Ticker</th>
+
+      <th>Cost</th>
+
+      <th>Current Value</th>
+    
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finances.each do |finance| %>
+      <tr>
+        <td><%= finance.name %></td>
+         <td><%= link_to "#{finance.ticker}", finance %></td>
+        <td>$<%= finance.current_value %></td>
+        <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %> 
