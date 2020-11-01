@@ -10,36 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_055204) do
+ActiveRecord::Schema.define(version: 2020_11_01_042657) do
 
   create_table "assets", force: :cascade do |t|
     t.string "name"
     t.string "ticker"
-    t.integer "average_cost"
     t.integer "current_value"
-    t.integer "category_id", null: false
-    t.integer "portfolio_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_assets_on_category_id"
-    t.index ["portfolio_id"], name: "index_assets_on_portfolio_id"
   end
 
-  create_table "classifications", force: :cascade do |t|
-    t.string "title"
+  create_table "portfolio_assets", force: :cascade do |t|
+    t.integer "portfolio_id"
+    t.integer "asset_id"
+    t.integer "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["asset_id"], name: "index_portfolio_assets_on_asset_id"
+    t.index ["portfolio_id"], name: "index_portfolio_assets_on_portfolio_id"
   end
 
   create_table "portfolios", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "code"
     t.integer "user_id"
-    t.integer "classification_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["classification_id"], name: "index_portfolios_on_classification_id"
     t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 
@@ -52,6 +48,4 @@ ActiveRecord::Schema.define(version: 2020_10_29_055204) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "assets", "categories"
-  add_foreign_key "assets", "portfolios"
 end

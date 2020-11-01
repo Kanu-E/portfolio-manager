@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     end
-
+    
     def destroy
       
         if session[:user_id].present?

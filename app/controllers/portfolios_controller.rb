@@ -66,6 +66,6 @@ class PortfoliosController < ApplicationController
     end
 
     def portfolio_params
-      params.require(:portfolio).permit(:first_name, :last_name, :code, :user_id)
+      params.require(:portfolio).permit(:name, :code, :user_id)
     end
 end

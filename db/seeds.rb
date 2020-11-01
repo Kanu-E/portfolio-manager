@@ -12,35 +12,33 @@ require 'faker'
     User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "Hello" )
 end
 
-4.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 1)
-end
-
-4.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 2)
-end
-
-4.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 3)
-end
-
-6.times do
-    Portfolio.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: 4)
-end
-
 20.times do
+    Portfolio.create(name: Faker::Name.last_name, code: Faker::Alphanumeric.alphanumeric(number: 5), user_id: Faker::Number.between(from: 1, to: 4))
+end
+
+5.times do
     Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 3, r_digits: 2))
 end
 
-23.times do
-    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 4, r_digits: 2))
-end
-
-24.times do
+10.times do
     Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 2, r_digits: 2))
 end
 
+13.times do
+    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 1, r_digits: 2))
+end
 
+50.times do
+    PortfolioAsset.create(asset_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 2, r_digits: 2) )
+end
+
+50.times do
+    PortfolioAsset.create(asset_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 3, r_digits: 2) )
+end
+
+30.times do
+    PortfolioAsset.create(asset_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 1, r_digits: 2) )
+end
 
 
 

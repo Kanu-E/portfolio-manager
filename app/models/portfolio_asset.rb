@@ -1,4 +1,4 @@
 class PortfolioAsset < ApplicationRecord
-    belongs_to :Asset
-    belongs_to :Portfolio
+    belongs_to :asset
+    belongs_to :portfolio
 end
