@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'assets/show'
+  get 'assets/new'
+  get 'assets/edit'
   root "welcome#index"
 
   get 'signup' => 'users#new'
