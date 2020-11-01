@@ -17,27 +17,27 @@ end
 end
 
 5.times do
-    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 3, r_digits: 2))
+    Finance.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 3, r_digits: 2))
 end
 
 10.times do
-    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 2, r_digits: 2))
+    Finance.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 2, r_digits: 2))
 end
 
 13.times do
-    Asset.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 1, r_digits: 2))
+    Finance.create(name: Faker::Company.name, current_value: Faker::Number.decimal(l_digits: 1, r_digits: 2))
 end
 
 50.times do
-    PortfolioAsset.create(asset_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 2, r_digits: 2) )
+    PortfolioFinance.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 2, r_digits: 2) )
 end
 
 50.times do
-    PortfolioAsset.create(asset_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 3, r_digits: 2) )
+    PortfolioFinance.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 3, r_digits: 2) )
 end
 
 30.times do
-    PortfolioAsset.create(asset_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 1, r_digits: 2) )
+    PortfolioFinance.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 1, r_digits: 2) )
 end
 
 

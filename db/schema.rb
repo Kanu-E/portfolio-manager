@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_01_042657) do
+ActiveRecord::Schema.define(version: 2020_11_01_094335) do
 
-  create_table "assets", force: :cascade do |t|
+  create_table "finances", force: :cascade do |t|
     t.string "name"
     t.string "ticker"
     t.decimal "current_value"
@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 2020_11_01_042657) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "portfolio_assets", force: :cascade do |t|
+  create_table "portfolio_finances", force: :cascade do |t|
     t.integer "portfolio_id"
-    t.integer "asset_id"
+    t.integer "finance_id"
     t.decimal "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["asset_id"], name: "index_portfolio_assets_on_asset_id"
-    t.index ["portfolio_id"], name: "index_portfolio_assets_on_portfolio_id"
+    t.index ["finance_id"], name: "index_portfolio_finances_on_finance_id"
+    t.index ["portfolio_id"], name: "index_portfolio_finances_on_portfolio_id"
   end
 
   create_table "portfolios", force: :cascade do |t|
