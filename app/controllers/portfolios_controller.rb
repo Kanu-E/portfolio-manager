@@ -3,10 +3,7 @@ class PortfoliosController < ApplicationController
   before_action :require_login, except: [:index]
 
   def index
- 
-
       @portfolios = User.find(current_user.id).portfolios
-
   end
 
 

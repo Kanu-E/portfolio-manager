@@ -10,10 +10,10 @@
   <%= @portfolio.code %>
 </p>
 
-<%# <p>
-  <strong>Type:</strong>
-  <%= @portfolio.type %>
-<%# </p> %>
+<p>
+  <strong>Total Value:</strong>
+  $<%= @portfolio.total_value %>
+</p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %> |
+<%= link_to 'Back', portfolios_path %> 

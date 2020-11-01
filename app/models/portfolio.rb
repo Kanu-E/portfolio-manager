@@ -12,5 +12,10 @@ class Portfolio < ApplicationRecord
         user
     end
 
+    def total_value
+        total = 0
+        values = self.finances.collect {|finance| finance.current_value}
+        values.inject{|total,x| total + x }
+    end
 
 end
