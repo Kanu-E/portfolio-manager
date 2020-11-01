@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  before_action :set_portfolio, only: [:show, :edit, :update]
   before_action :require_login, except: [:index]
 
   def index
@@ -24,39 +24,26 @@ class PortfoliosController < ApplicationController
 
 
   def create
-    
     @portfolio = Portfolio.new(portfolio_params)
-
-    respond_to do |format|
       if @portfolio.save
-        format.html { redirect_to @portfolio, notice: 'Portfolio was successfully created.' }
-        format.json { render :show, status: :created, location: @portfolio }
+      redirect_to @portfolio, notice: 'Portfolio was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @portfolio.errors, status: :unprocessable_entity }
+      render :new 
       end
-    end
   end
 
   def update
- 
-    respond_to do |format|
-      if @portfolio.update(portfolio_params)
-        format.html { redirect_to @portfolio, notice: 'Portfolio was successfully updated.' }
-        format.json { render :show, status: :ok, location: @portfolio }
+       if @portfolio.update(portfolio_params)
+        redirect_to @portfolio, notice: 'Portfolio was successfully updated.' 
       else
-        format.html { render :edit }
-        format.json { render json: @portfolio.errors, status: :unprocessable_entity }
+       render :edit
       end
-    end
   end
 
   def destroy
+    raise params.inspect
     @portfolio.destroy
-    respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully removed.' }
-      format.json { head :no_content }
-    end
+   redirect_to portfolios_url, notice: 'Portfolio was successfully removed'
   end
 
   private

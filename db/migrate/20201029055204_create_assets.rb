@@ -3,7 +3,7 @@ class CreateAssets < ActiveRecord::Migration[6.0]
     create_table :assets do |t|
       t.string :name
       t.string :ticker
-      t.integer :current_value
+      t.decimal :current_value
 
       t.timestamps
     end

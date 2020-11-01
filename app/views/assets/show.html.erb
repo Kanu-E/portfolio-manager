@@ -1,2 +1,23 @@
-<h1>Assets#show</h1>
-<p>Find me in app/views/assets/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @asset.name %>
+</p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @asset.ticker %>
+</p>
+
+<p>
+  <strong>Current Value:</strong>
+  <%= @asset.current_value %>
+</p>
+
+<%# <p>
+  <strong>Type:</strong>
+  <%= @asset.type %>
+<%# </p> %>
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |

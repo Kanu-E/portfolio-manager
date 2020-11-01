@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_11_01_042657) do
   create_table "assets", force: :cascade do |t|
     t.string "name"
     t.string "ticker"
-    t.integer "current_value"
+    t.decimal "current_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_11_01_042657) do
   create_table "portfolio_assets", force: :cascade do |t|
     t.integer "portfolio_id"
     t.integer "asset_id"
-    t.integer "cost"
+    t.decimal "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["asset_id"], name: "index_portfolio_assets_on_asset_id"

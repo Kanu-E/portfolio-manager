@@ -1,2 +1,6 @@
-<h1>Assets#edit</h1>
-<p>Find me in app/views/assets/edit.html.erb</p>
+<h1>Editing Asset</h1>
+
+<%= render partial: "form", locals: {asset: @asset} %>
+
+<%= link_to 'Show', @asset %> |
+<%= link_to 'Back', assets_path %>

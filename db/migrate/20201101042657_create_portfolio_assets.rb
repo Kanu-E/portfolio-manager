@@ -3,7 +3,7 @@ class CreatePortfolioAssets < ActiveRecord::Migration[6.0]
     create_table :portfolio_assets do |t|
       t.references :portfolio
       t.references :asset
-      t.integer :cost
+      t.decimal :cost
 
       t.timestamps
     end

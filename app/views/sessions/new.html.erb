@@ -1,5 +1,6 @@
 
 <h3 class="errors"><%=@error%></h3>
+
 <%= form_for :user, url: '/login' do |f| %>
     <%= label_tag "email"%>
     <%=text_field_tag :email%>
