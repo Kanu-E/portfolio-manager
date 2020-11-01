@@ -1,1 +1,2 @@
 <h1>Welcome <%= current_user.first_name %></h1>
+<h4>You have <%=current_user.portfolios.count%> under management, click <%= link_to('here', portfolios_path)%> to view your portfolios</h4>

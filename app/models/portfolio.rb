@@ -11,4 +11,6 @@ class Portfolio < ApplicationRecord
     def portfolio_manager
         user
     end
+
+
 end

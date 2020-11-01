@@ -3,11 +3,10 @@ class PortfoliosController < ApplicationController
   before_action :require_login, except: [:index]
 
   def index
-    if params[:user_id]
-      @portfolios = User.find(params[:user_id]).portfolios
-    else
-      @portfolios = Portfolio.all
-    end
+ 
+
+      @portfolios = User.find(current_user.id).portfolios
+
   end
 
 
