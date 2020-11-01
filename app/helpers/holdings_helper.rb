@@ -1,2 +1,2 @@
-module PortfolioFinancesHelper
+module HoldingsHelper
 end

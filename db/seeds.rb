@@ -29,15 +29,15 @@ end
 end
 
 50.times do
-    PortfolioFinance.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 2, r_digits: 2) )
+    Holding.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 2, r_digits: 2) )
 end
 
 50.times do
-    PortfolioFinance.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 3, r_digits: 2) )
+    Holding.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 3, r_digits: 2) )
 end
 
 30.times do
-    PortfolioFinance.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 1, r_digits: 2) )
+    Holding.create(finance_id: Faker::Number.between(from: 1, to: 20), portfolio_id: Faker::Number.between(from: 1, to: 20), cost: Faker::Number.decimal(l_digits: 1, r_digits: 2) )
 end
 
 

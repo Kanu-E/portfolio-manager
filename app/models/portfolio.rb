@@ -1,6 +1,6 @@
 class Portfolio < ApplicationRecord
     has_many :holdings
-    has_many :assets, through: :holdings
+    has_many :finances, through: :holdings
     belongs_to :user
     validates :code, presence: true, uniqueness: true
 

@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 2020_11_01_094335) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "portfolio_finances", force: :cascade do |t|
+  create_table "holdings", force: :cascade do |t|
     t.integer "portfolio_id"
     t.integer "finance_id"
     t.decimal "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["finance_id"], name: "index_portfolio_finances_on_finance_id"
-    t.index ["portfolio_id"], name: "index_portfolio_finances_on_portfolio_id"
+    t.index ["finance_id"], name: "index_holdings_on_finance_id"
+    t.index ["portfolio_id"], name: "index_holdings_on_portfolio_id"
   end
 
   create_table "portfolios", force: :cascade do |t|
