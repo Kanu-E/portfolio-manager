@@ -1,5 +1,5 @@
 class Finance < ApplicationRecord
-    has_many :portfolio_finances
-    has_many :portfolio, through: :portfolio_finances
+    has_many :holdings
+    has_many :portfolio, through: :holdings
     validates :name, presence: true, uniqueness: true
 end

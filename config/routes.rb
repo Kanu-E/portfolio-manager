@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'holdings/index'
+  get 'holdings/show'
+  get 'holdings/new'
+  get 'holdings/edit'
   resources :finances
   root "welcome#index"
   get 'signup' => 'users#new'
