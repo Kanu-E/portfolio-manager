@@ -17,7 +17,6 @@ class HoldingsController < ApplicationController
   end
 
   def create
-    raise params.inspect
     @holding = Holding.new(holding_params)
     if @holding.save
     redirect_to @holding, notice: 'Holding was successfully created.' 
@@ -26,6 +25,8 @@ class HoldingsController < ApplicationController
     end
   end
 
+  def
+
   private
   
   def set_holding
@@ -33,7 +34,7 @@ class HoldingsController < ApplicationController
   end
 
   def holding_params
-    params.require(:holding).permit(:name, :finance_id, :portfolio_id)
+    params.require(:holding).permit(:cost, :finance_id, :portfolio_id, finance_attributes: [:name, :ticker, :current_value])
   end
 
 end
