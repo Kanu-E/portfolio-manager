@@ -1,22 +1,17 @@
 <%= form_for @finance do |f| %>
-
-
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
-
   <p>
     <%= f.label :Ticker %>
     <%= f.text_field :ticker %>
   </p>
-
-<p>
+  <p>
     <%= f.label :Current_Value %>
     <%= f.text_field :current_value %>
   </p>
 
-  <p>
+
     <%= f.submit %>
-  </p>
 <% end %>

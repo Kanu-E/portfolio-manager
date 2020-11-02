@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Name:</strong>
   <%= @portfolio.name %>
@@ -15,6 +16,9 @@
   $<%= @portfolio.total_value %>
 </p>
 
+<h3>Assets included in your your portfolio</h3>
+
+
 <table>
   <thead>
     <tr>
@@ -22,26 +26,26 @@
       
       <th>Ticker</th>
 
-      <th>Cost</th>
-
       <th>Current Value</th>
+
+      <th>Cost</th>
     
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @finances.each do |finance| %>
+    <% @holdings.each do |holding| %>
       <tr>
-        <td><%= finance.name %></td>
-         <td><%= link_to "#{finance.ticker}", finance %></td>
-        <td>$<%= finance.current_value %></td>
-        <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
+        <td><%= holding.finance.name %></td>
+         <td><%= link_to "#{holding.finance.ticker}", edit_finance_path(holding.finance_id) %></td>
+        <td>$<%= holding.finance.current_value %></td>
+        <td>$<%= holding.cost %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+<%= link_to 'Edit Portfolio', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %> 

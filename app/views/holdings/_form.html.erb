@@ -9,16 +9,27 @@
     </p>
   <% end %>
 
-    <%= f.hidden_field :portfolio_id %>
+<p>
+  <strong>Name:</strong>
+  <%= @finance.name %>
+</p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @finance.ticker %>
+</p>
+
+<p>
+  <strong>Current Value:</strong>
+  <%= @finance.current_value %>
+</p>
     <%= f.hidden_field :finance_id %>
-
-
   <p>
     <%= f.label :cost %>
-    <%= f.text_field :name %>
+    <%= f.text_field :cost %>
   </p>
 
-
+<%= f.select :portfolio_id, current_user.portfolios.collect { |p| [ p.name, p.id ] }, include_blank: true%>
 
   <p>
     <%= f.submit %>
