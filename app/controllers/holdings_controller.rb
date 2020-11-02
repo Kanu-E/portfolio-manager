@@ -25,7 +25,6 @@ class HoldingsController < ApplicationController
     end
   end
 
-  def
 
   private
   
