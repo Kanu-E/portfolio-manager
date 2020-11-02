@@ -1,4 +1,5 @@
 class Holding < ApplicationRecord
     belongs_to :finance
     belongs_to :portfolio
+    accepts_nested_attributes_for :finance
 end

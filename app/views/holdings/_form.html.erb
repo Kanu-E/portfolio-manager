@@ -8,6 +8,12 @@
       </ul>
     </p>
   <% end %>
+
+    <p>
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </p>
+
 <%if params[:finance_id]%>
    <%= f.hidden_field :finance_id %>
    <br>
@@ -24,14 +30,37 @@
   <%= @finance.current_value %>
    <%= f.hidden_field :finance_id %>
   <%else%>
-  <p><%= f.select :finance_id, Finance.all.collect { |f| [ f.ticker, f.id ] }, include_blank: true%></p>
-  <%end%>
-</p>
-<%= f.select :portfolio_id, current_user.portfolios.collect { |p| [ p.name, p.id ] }, include_blank: true%>
   <p>
-    <%= f.label :cost %>
-    <%= f.text_field :cost %>
+   <%= f.label :finance %>
+   <%= f.collection_select :finance_id, Finance.all, :id, :name, prompt: true %>
   </p>
+
+  <%end%>
+
+  
+
+  <%= f.fields_for :finance do |f_build| %>
+  
+  <p> Or create a new finance:</p>
+    <p>
+    <%= f_build.label :name %>
+    <%= f_build.text_field :name %>
+    </p>
+    <p>
+    <%= f_build.label :ticker %>
+    <%= f_build.text_field :ticker %>
+  </p>
+
+ <p>
+    <%= f_build.label :current_value %>
+    <%= f_build.text_field :current_value %>
+  </p>
+  <%end%>
+  </p>
+  <%= f.label :portfolio %>
+  <%= f.collection_select :portfolio_id, current_user.portfolios, :id, :name, prompt: true %>
+  <p>
+ 
   <p>
     <%= f.submit %>
   </p>

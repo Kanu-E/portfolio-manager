@@ -7,6 +7,7 @@ class HoldingsController < ApplicationController
 
   def new
     @holding = Holding.new(finance_id: params[:finance_id])
+    @holding.build_finance
     if params[:finance_id]
     @finance = Finance.find(params[:finance_id])
     end
@@ -16,6 +17,7 @@ class HoldingsController < ApplicationController
   end
 
   def create
+    raise params.inspect
     @holding = Holding.new(holding_params)
     if @holding.save
     redirect_to @holding, notice: 'Holding was successfully created.' 
