@@ -8,29 +8,30 @@
       </ul>
     </p>
   <% end %>
-
-<p>
+<%if params[:finance_id]%>
+   <%= f.hidden_field :finance_id %>
+   <br>
+  <p>
   <strong>Name:</strong>
   <%= @finance.name %>
-</p>
-
-<p>
+  </p>
+  <p>
   <strong>Ticker:</strong>
   <%= @finance.ticker %>
-</p>
-
-<p>
+  </p>
+  <p>
   <strong>Current Value:</strong>
   <%= @finance.current_value %>
+   <%= f.hidden_field :finance_id %>
+  <%else%>
+  <p><%= f.select :finance_id, Finance.all.collect { |f| [ f.ticker, f.id ] }, include_blank: true%></p>
+  <%end%>
 </p>
-    <%= f.hidden_field :finance_id %>
+<%= f.select :portfolio_id, current_user.portfolios.collect { |p| [ p.name, p.id ] }, include_blank: true%>
   <p>
     <%= f.label :cost %>
     <%= f.text_field :cost %>
   </p>
-
-<%= f.select :portfolio_id, current_user.portfolios.collect { |p| [ p.name, p.id ] }, include_blank: true%>
-
   <p>
     <%= f.submit %>
   </p>
