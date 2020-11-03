@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Portfolios</h1>
+<%if @portfolios.empty?%>
 
+<h3> You do not manage any portfolios yet click the link below to create a new portfolio </h3>
+
+<%else%>
 <h3> Below is a list of portfolios you manage </h3>
 
 <table>
@@ -14,7 +18,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
     <% @portfolios.each do |portfolio| %>
       <tr>
@@ -25,7 +29,7 @@
     <% end %>
   </tbody>
 </table>
+ <% end %>
 
-<br>
 
-<%= link_to 'New Portfolio', new_portfolio_path %> |
+<%= link_to 'New Portfolio', new_portfolio_path %> 
