@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :finances
   resources :holdings
   resources :portfolios, only: [:index, :show] do
-    resources :holdings, only: [:show, :index, :new, :edit]
+    resources :holdings, only: [:show, :index, :new]
   end
   resources :finances, only: [:index, :show] do
-  resources :holdings, only: [:show, :index, :new, :edit]
+  resources :holdings, only: [:show, :index, :new]
   end
   root "welcome#index"
   get 'signup' => 'users#new'

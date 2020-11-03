@@ -1,2 +1,22 @@
-<h1>PortfolioFinances#show</h1>
-<p>Find me in app/views/portfolio_finances/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @holding.finance.name %>
+</p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @holding.finance.ticker %>
+</p>
+
+<p>
+  <strong>Current Value:</strong>
+  <%= @holding.finance.current_value %>
+</p>
+
+<p>
+ <strong> This asset was purchased for <%= @holding.portfolio.code %> at $<%=@holding.cost%></strong>
+</p>
+
+<%= link_to 'Edit', edit_holding_path(@holding) %> 

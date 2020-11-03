@@ -25,6 +25,14 @@ class HoldingsController < ApplicationController
     end
   end
 
+  def update
+    if @holding.update(holding_params)
+     redirect_to @holding, notice: 'Holding was successfully updated.' 
+   else
+    render :edit
+   end
+end
+
 
   private
   
