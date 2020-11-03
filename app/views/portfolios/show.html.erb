@@ -10,7 +10,9 @@
   <strong>Portfolio Code:</strong>
   <%= @portfolio.code %>
 </p>
+<%if @holdings.empty?%>
 
+<%else%>
 <p>
   <strong>Total Value:</strong>
   $<%= @portfolio.total_value %>
@@ -45,6 +47,9 @@
     <% end %>
   </tbody>
 </table>
+
+<% end %>
+
 
 <p><%= link_to 'Add', new_holding_path %> to existing portflio</p>
 
