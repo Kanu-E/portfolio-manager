@@ -14,8 +14,9 @@
     <%= f.text_field :cost %>
   </p>
 
-<%if params[:finance_id]%>
-   <%= f.hidden_field :finance_id %>
+<%if @finance%>
+
+ <%= f.hidden_field :finance_id %>
   <p>
   <strong>Name:</strong>
   <%= @finance.name %>
@@ -46,29 +47,25 @@
    <%= f.collection_select :finance_id, Finance.all, :id, :name, prompt: true %>
   </p>
 
-  <%= f.fields_for :finance do |f_build| %>
+  <%= f.fields_for :finance do |f| %>
   
-  <p> Or create a new finance:</p>
-    <p>
-    <%= f_build.label :name %>
-    <%= f_build.text_field :name %>
-    </p>
-    <p>
-    <%= f_build.label :ticker %>
-    <%= f_build.text_field :ticker %>
+<p> Or create a new finance:</p>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </p>
-
+  <p>
+    <%= f.label :ticker %>
+    <%= f.text_field :ticker %>
+  </p>
  <p>
-    <%= f_build.label :current_value %>
-    <%= f_build.text_field :current_value %>
+    <%= f.label :current_value %>
+    <%= f.text_field :current_value %>
   </p>
   <%end%>
 
   <%end%>
-
   
-
-
   </p>
   <%= f.label :portfolio %>
   <%= f.collection_select :portfolio_id, current_user.portfolios, :id, :name, prompt: true %>

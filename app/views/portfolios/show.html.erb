@@ -38,7 +38,7 @@
     <% @holdings.each do |holding| %>
       <tr>
         <td><%= holding.finance.name %></td>
-         <td><%= link_to "#{holding.finance.ticker}", edit_portfolio_holding_path(@portfolio) %></td>
+         <td><%= link_to holding.finance.ticker, holding_path(holding) %></td>
         <td>$<%= holding.finance.current_value %></td>
         <td>$<%= holding.cost %></td>
       </tr>
@@ -48,5 +48,5 @@
 
 <p><%= link_to 'Add', new_holding_path %> to existing portflio</p>
 
-<%= link_to 'Edit Portfolio', portfolio_path(@portfolio) %> |
+<%= link_to 'Edit Portfolio', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %> 
