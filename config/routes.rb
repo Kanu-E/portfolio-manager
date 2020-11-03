@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :finances
   resources :holdings
   resources :portfolios, only: [:index, :show] do
-    resources :holdings, only: [:show, :index, :new]
+    resources :holdings, only: [:show, :index, :edit]
   end
   resources :finances, only: [:index, :show] do
   resources :holdings, only: [:show, :index, :new]

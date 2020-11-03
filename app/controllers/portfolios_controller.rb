@@ -37,12 +37,6 @@ class PortfoliosController < ApplicationController
       end
   end
 
-  # def destroy
-  #   raise params.inspect
-  #   @portfolio.destroy
-  #  redirect_to portfolios_url, notice: 'Portfolio was successfully removed'
-  # end
-
   private
   
     def set_portfolio

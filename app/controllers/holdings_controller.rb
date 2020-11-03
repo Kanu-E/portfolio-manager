@@ -17,6 +17,7 @@ class HoldingsController < ApplicationController
   end
 
   def create
+  
     @holding = Holding.new(holding_params)
     if @holding.save
     redirect_to @holding, notice: 'Holding was successfully created.' 
