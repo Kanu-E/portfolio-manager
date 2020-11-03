@@ -1,5 +1,11 @@
 <h1>Finances</h1>
 
+
+<%= form_tag finances_path, :method => 'get' do%>
+<%= text_field_tag :query, params[:query] %>
+<%= submit_tag "Search"%>
+<% end %>
+
 <table>
   <thead>
     <tr>

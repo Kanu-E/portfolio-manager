@@ -5,7 +5,7 @@ class FinancesController < ApplicationController
     end
   
     def index
-        @finances = Finance.all
+      @finances = Finance.query(params[:query])
     end
 
     def new
