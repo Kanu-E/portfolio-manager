@@ -16,7 +16,7 @@
 </p>
 
 <p>
- <strong> This asset was purchased for <%= @holding.portfolio.code %> at $<%=@holding.cost%></strong>
+ <strong> This asset was purchased for <%= link_to @holding.portfolio.code, portfolio_path(@holding.portfolio.id) %> at $<%=@holding.cost%></strong>
 </p>
 
 <%= link_to 'Edit', edit_holding_path(@holding) %> 
